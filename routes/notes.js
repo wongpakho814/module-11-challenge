@@ -19,11 +19,11 @@ notes.post("/", (req, res) => {
     const newNote = {
       title,
       text,
-      tip_id: uniqid(),
+      id: uniqid(),
     };
 
     readAndAppend(newNote, "./db/db.json");
-    res.json(`Note added successfully 🚀`);
+    res.json(`Note added successfully`);
   } else {
     res.error("Error in adding note");
   }
